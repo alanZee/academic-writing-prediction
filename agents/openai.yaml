@@ -1,4 +1,4 @@
 interface:
   display_name: "学术写作-小论文-预测任务"
-  short_description: "蒸馏四篇目标论文的论证与语言，用于科学机器学习预测论文写作"
-  default_prompt: "使用 $academic-writing-prediction，依据我提供的研究设定、数据与图表，起草或修改预测任务论文，校准目标文献风格并保持结论边界。"
+  short_description: "以统一的论证与表达标准辅助预测论文规划、撰写、审查、优化与重构"
+  default_prompt: "使用 $academic-writing-prediction，依据我的研究问题、证据和现有材料，明确手稿应是什么样及怎样写成，再按指定范围规划、撰写、审查或修改。"
