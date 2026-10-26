@@ -1,0 +1,12 @@
+.DS_Store
+._*
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+*.key
+# Local reading copies; use the public source links in assets/README.md.
+assets/Kochkov-et-al-2021-arXiv-v1.pdf
+assets/Li-et-al-2021-FNO.pdf
+assets/Lu-et-al-2021-DeepONet.pdf
