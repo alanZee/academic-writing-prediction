@@ -4,7 +4,7 @@ description: >-
   学术写作-小论文-预测任务：主要辅助科学机器学习、CFD/PDE、神经算子和动力系统预测论文的手稿规划与撰写，也支持审查、优化、重构、润色和学术中译英。统一明确手稿应具备的主旨、论证、证据与表达，以及怎样写成；依据 Li–Zhang JFM、Kochkov PNAS、FNO、DeepONet 校准写作。适用于全文或章节大纲、配套实验设计、正文起草和已有稿件修改；纯模型实现、调试或一般文字润色不触发。
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
 # 学术写作-小论文-预测任务
@@ -36,17 +36,28 @@ metadata:
 
 ## 按需加载
 
-开始写作或校准语气时读 [style.md](references/style.md)，按实际贡献选择主线。来源标签由 [sources.md](references/sources.md)解释。
+按用户请求的动作选主路径；“按某文风格润色”仍走润色，“分析来源写法”才走来源分析。相关规则已读且足以完成当前任务时停止扩读。
 
-| 当前需要 | 再读什么 |
-| --- | --- |
-| 规划、撰写、审查、优化或重构的论证判断；分析如何及为何编排 | [argument-architecture.md](references/argument-architecture.md)，先读§0明确目标成稿与写法，再按论证问题选一篇细读；[sections.md](references/sections.md)查对应章节 |
-| 要求贴近某篇目标论文，或需原文级段落/句法示范 | [Li–Zhang](references/paper-analyses/li-zhang.md)、[Kochkov](references/paper-analyses/kochkov.md)、[FNO](references/paper-analyses/fno.md)、[DeepONet](references/paper-analyses/deeponet.md)中匹配的一篇 |
-| 写预测结果、成本、泛化、稳定性、物理或理论保证 | [prediction-evidence.md](references/prediction-evidence.md)的相关行 |
-| 需要完整改写示例或检查“像论文”是否落实 | [examples.md](references/examples.md)的相关例子 |
-| 追溯依据、核对文献身份或增加文献性主张 | [sources.md](references/sources.md)的相关来源卡；科学引用再回原文核查 |
+| 当前动作 | 最少阅读 | 交付 |
+| --- | --- | --- |
+| 规划研究主线或大纲 | [论证架构](references/argument-architecture.md)§0；按需补[章节指南](references/sections.md) | 问题、候选/已有主张、证据需求和章节职责 |
+| 从材料起草正文 | [章节指南](references/sections.md)对应部分；按需查[连续起草示例](references/examples.md) | 请求范围内正文；科学表述按[证据边界](references/prediction-evidence.md)选查 |
+| 优化或重构 | 按问题选[论证架构](references/argument-architecture.md)或[修订工作指南](references/revision-workbench.md) | 授权范围内改写，简述实质调整 |
+| 润色、翻译、去模板腔 | [风格与语言](references/style.md)相关部分 | 保留含义的改写，不重启整篇研究规划 |
+| 仅审查 | [章节指南](references/sections.md)对应部分；存在具体障碍时补[修订工作指南](references/revision-workbench.md) | 位置、影响与改法；允许无需修改，不写文件 |
+| 分析来源写法 | [来源表](references/sources.md)，再选匹配的[Li–Zhang](references/paper-analyses/li-zhang.md)、[Kochkov](references/paper-analyses/kochkov.md)、[FNO](references/paper-analyses/fno.md)或[DeepONet](references/paper-analyses/deeponet.md) | 区分原文观察与编辑解释的可追溯分析 |
+
+需要校准目标文风时补读[六维软校准](references/style.md#ars-六维风格软校准)；需要原文级句法依据时再查对应细读，不因提到“对标”加载四篇全文。写稿及修改交付前应用[ARS＋Humanizer联合复核](references/ars-writing-quality.md)，只检查当前文本与必要上下文。只审查时采用同一标准给建议。
 
 不默认重读全部来源或检索全部原文。四篇原文入口与版本见 [来源表](references/sources.md#pdf-归档与版本对应)；本地已存 PDF 时按 [assets 文件名](assets/README.md)读取，否则使用对应原文入口。页码、段界以指定版本为准。来源卡和细读可用于组织写作，不能代替新增科学主张所需的原文核读。
+
+## 规则效力与维护位置
+
+- **语义底线**由[预测证据边界](references/prediction-evidence.md)维护，包括科学变更与作者授权；科学错误不能用文风改善抵消。
+- **条件性诊断**由[修订工作指南](references/revision-workbench.md)维护；先确认实际阅读或论证障碍，再判断根因，不能从某个句式直接推断作者写作过程。
+- **风格选择**由[风格与语言](references/style.md)维护，模板腔复核集中在[联合指南](references/ars-writing-quality.md)。有效句序、必要重复、设置与过渡均可保留。
+
+论证架构维护问题与主张关系，章节指南维护章节职责，来源细读保存观察与解释，示例演示应用。维护时同步相关引用，不将教学案例变成另一套硬规则。日常任务不需读取[行为试用记录](references/behavioral-checks.md)。
 
 ## 写作执行
 
@@ -54,9 +65,13 @@ metadata:
 2. **选择论证。** 物理认识主导时采用 JFM 的“分析如何指导设计”；数值加速主导时采用 Kochkov 的“保留数值结构、改进特定近似、核对精度与成本”；算子方法主导时采用 FNO/DeepONet 的“映射定义、表示方式、离散实现、实测能力”。允许组合，不强制按论文名分节或等量混合。
 3. **建立依赖。** 每节明确要让读者接受哪项判断、依靠哪项材料、为何置于此处。每段接住一个已知对象或未解决问题，用定义、对照、观察或解释推进，给下一段留下可用的结论或问题。按职责选择段落形态，不把所有段落套成同一模板。重要顺序用删去/换序检验其功能，不为使结构完整而发明机制。
 4. **安排句间推进。** 先定每句的工作，再定主语、条件从句与信息重心；让前句的新信息成为后句的起点，区分观察和推断。用实质依赖衔接段落，再校准语气与节奏；不设机械句长、被动语态比例或连接词配额。
-5. **回查主线与证据。** 检查结论回答了哪项科学问题、实现了哪项知识目标，再扫描数值、图表指向、划分名称、稳定/泛化/物理/速度用语。方法核对实现，结果核对已有产物，摘要与结论不能比正文更强。若证据改变核心主张，连同相关章节和贡献表述一起修订，不靠局部措辞维持旧叙事。
+5. **回查主线与证据。** 检查结论回答了哪项科学问题、实现了哪项知识目标，再扫描数值、图表指向、划分名称、稳定/泛化/物理/速度用语。按任务范围和已有材料核对方法身份与结果，摘要与结论不能比正文更强。若证据影响核心主张，按[科学变更边界](references/prediction-evidence.md#科学变更与作者授权)处理，并同步相关章节和贡献表述，不靠局部措辞维持旧叙事。
 
-优先级为证据真实性与科学含义、当前任务明确要求和适用投稿规范、四源风格、其他通用建议。宣传要求与真实结果冲突时，重写贡献范围并保留影响主要结论的反例。删除无实质信息的自我辩解和不服务主旨的枝节，保留理解结论所需的条件。已有证据支持相容性而不足以归因时，可写“XX现象与YY机制的预期表现一致”；没有相容性证据时，不用这类表述替代机制检验。
+优先级为证据真实性与科学含义、当前任务明确要求和适用投稿规范、四源风格、其他通用建议。宣传要求与真实结果冲突时，指出冲突并依科学变更边界处理贡献范围，保留影响主要结论的反例。删除无实质信息的自我辩解和不服务主旨的枝节，保留理解结论所需的条件。已有证据支持相容性而不足以归因时，可写“XX现象与YY机制的预期表现一致”；没有相容性证据时，不用这类表述替代机制检验。
+
+## 默认语言复核
+
+完成当前正文或修改后，按[联合指南](references/ars-writing-quality.md)执行一次“ARS表达诊断→Humanizer残留结构→科学含义核对”。共同触发、合并重合问题，保留无需修改的文本；不连续做两遍全文改写，不附中间草稿或固定检查报告。仅有大纲而无正文时，不为复核新增正文。
 
 ## 交付与边界
 
@@ -64,6 +79,6 @@ metadata:
 
 证据不足时继续完成可支持部分，在正文外指出最小缺口和允许的结论。写作请求不自动授权仿真、训练、生产后处理、外部模型上传、投稿、Git 提交或修改其他文件。保持当前项目实际执行边界，不从来源论文移植实验配置。
 
-纯文本交付核对语义与引用即可。若实际修改 LaTeX、DOCX 等并交付排版成品，再依项目工具链编译/渲染检查；未检查时说明，不能称为可投稿。该技能不强制依赖 ARS、Nature 或其他插件，不强制启动完整学术流水线。
+纯文本交付核对语义与引用即可。若实际修改 LaTeX、DOCX 等并交付排版成品，再依项目工具链编译/渲染检查；未检查时说明，不能称为可投稿。ARS风格校准、Writing Quality Check与Humanizer采用一致的本地提炼与适配方式，不依赖其他skill安装，不冒称运行过插件。来源版本及贡献见联合指南；Nature仍为设计参考。用户另行明确调用其他skill时按其入口和当前授权处理，不由本地复核自动启动完整流水线。
 
 本技能原创指令、分析与配置采用 [MIT 许可](LICENSE)；第三方论文及其原文内容保持各自许可，见 [文献资源说明](assets/README.md)。

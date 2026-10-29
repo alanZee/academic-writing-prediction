@@ -36,7 +36,7 @@ git clone https://github.com/alanZee/academic-writing-prediction.git ~/.codex/sk
 明确区分已有发现与待做实验，不编造数值或机制结论。
 ```
 
-只润色一个段落时，可直接指定段落和修改目标；不要求启动整套研究规划。仅要求审查时输出有位置、依据和修改办法的意见；要求优化或重构时，将必要调整落实到指定稿件。写作请求不自动授权运行仿真、训练、投稿或上传其他研究材料。
+只润色一个段落时，可直接指定段落和修改目标；不要求启动整套研究规划。ARS风格软校准、Writing Quality Check与Humanizer采用一致的本地提炼方式，写稿及修改交付前默认联合复核；无需安装这些插件。仅要求审查时输出有位置、依据和修改办法的意见；要求优化或重构时，将必要调整落实到指定稿件。写作请求不自动授权运行仿真、训练、投稿或上传其他研究材料。
 
 ## 文件导航
 
@@ -45,6 +45,10 @@ git clone https://github.com/alanZee/academic-writing-prediction.git ~/.codex/sk
 - [章节指南](references/sections.md)、[语言与风格](references/style.md)、[预测证据边界](references/prediction-evidence.md)、[原创示例](references/examples.md)。
 - [来源及逐篇细读入口](references/sources.md)：版本对应与原文分析。
 - [文献资源](assets/README.md)：JFM PDF、其余文献的原文链接及本地归档文件名；`agents/openai.yaml`：Codex 显示信息。
+
+- [修订工作指南](references/revision-workbench.md)：具体做法、迁移方法、可能不足、根因与反例、调整方向及润色示范。
+- [ARS＋Humanizer联合复核](references/ars-writing-quality.md)：来源分工、一次复核流程及学术适配。
+- [行为试用](references/behavioral-checks.md)：维护用任务、实际结果及有限验证范围，不是日常必读项。
 
 ## 许可
 
