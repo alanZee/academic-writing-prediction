@@ -29,7 +29,7 @@
 
 **场景：**Methods 从网络层数和模块名开始，输入输出的科学含义不清楚。
 
-**动作：**按 F1–F3 / D1–D3，先定义输入函数、条件参数、输出对象和求值位置，再说明采样、编码、组合和训练。用真实数据流串起公式与实现，不把理论算子和某一网格张量混为一谈。
+**动作：**按 F1–F3 / D1–D3，在读者需要理解网络操作时，明确输入函数、条件参数、输出对象和求值位置，并说明采样、编码、组合和训练。可从映射定义或架构概览切入，已有定义直接回指。用真实数据流串起公式与实现，不把理论算子和某一网格张量混为一谈。
 
 **原创示例（用户方法如此时）：**
 “The predictor maps an observed velocity history to the velocity field at the next time level. The history is sampled on the computational grid before it is passed to the learned map.”
@@ -51,7 +51,7 @@
 
 **场景：**Results 逐张介绍图，却没有比较目的。
 
-**动作：**借鉴 J3–J5 的“改变条件以检验解释”。先说明对照改变了什么，再报告观察，最后说明解决了哪个问题。只使用已完成对照，列出额外检验需求不等于授权执行。
+**动作：**借鉴 J3–J5 的“改变条件以检验解释”。明确对照改变了什么、观察到什么及回答了哪个问题；可先给条件，也可先给发现后紧接必要条件，不要求每段按三步展开。只使用已完成对照，列出额外检验需求不等于授权执行。
 
 **原创示例（已有相应对照时）：**
 “We next vary the initial shedding phase while keeping the trained predictor fixed. This comparison tests whether the observed error depends on the phase at which prediction begins.”
@@ -62,7 +62,7 @@
 
 **场景：**“accurate, stable and efficient”掩盖不同指标。
 
-**动作：**按 K5–K8、F4，将轨迹误差、统计重现、运行不发散、成本分别叙述；每句给比较口径，再用有证据的关系连接。图注说明各面板测量什么。
+**动作：**按 K5–K8、F4，将轨迹误差、统计重现、运行不发散、成本分别叙述；在读者判断结果所需的位置明确比较口径，共享条件可统一交代，后续不必逐句重复；按实际关系并列或连接。图注说明各面板测量什么。
 
 **原创示例（用户结果支持时）：**
 “The predicted spectrum retains the reference distribution after the trajectories decorrelate. This agreement concerns the sampled statistics rather than the phase of individual vortices.”
@@ -89,7 +89,7 @@
 - 用 wake、velocity field、solution operator、prediction error 等已定义对象作主语，避免连续多句 The proposed framework 开头。
 - 使用 maps、approximates、updates、projects、decreases、matches 等具体动作，不用多层名词堆叠掩盖动作。
 - 对比句说明相对谁、哪个条件、哪个量怎样变化，不靠 superior、remarkable、powerful、highly robust 表态。
-- 用前段未解决的问题启动后段；逻辑确有转折或后果时才加连接词，不每段轮流 Moreover / Furthermore / Importantly。
+- 后段可承接前段问题，也可引入并列评价、必要设置或新范围；逻辑确有转折或后果时才加连接词，不每段轮流 Moreover / Furthermore / Importantly。
 - 保留符号和术语，不为词汇变化将 prediction、reconstruction、simulation、control 互换。
 - 第一人称用于研究选择，物理对象用于现象，必要被动语态用于操作。不模仿语法瑕疵、硬凑口头禅或强制单一语态。
 - 引文描述真实贡献与条件。思想或方法借用需准确引用；一般论证技巧不要求每段机械插入四篇风格来源。
